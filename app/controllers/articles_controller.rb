@@ -1,45 +1,49 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+   skip_before_filter :verify_authenticity_token, :only => [:destroy]
 
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    
+    if params[:category_id].present?
+    @category = Category.find(params[:category_id])
+    end
+    if params[:category_id].present?
+      @articles = Article.where(category_id: params[:category_id])
+    else
+      @articles = Article.all
+    end
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
-  end
-
-  # GET /articles/new
-  def new
-    @article = Article.new
+    @category = Category.find(params[:category_id])
+    @articles = @category.articles.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   # GET /articles/1/edit
   def edit
+    @category = Category.find(params[:category_id])
+     @articles = @category.articles.find(params[:id])
+      @article = Article.find(params[:id])
+
   end
 
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
-
-    respond_to do |format|
-      if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
-      else
-        format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-      end
-    end
+    @category = Category.find(params[:category_id])
+    @article = @category.articles.create(article_params)
+    redirect_to category_path(@category) 
   end
 
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    @category = Category.find(params[:category_id]) 
+    @article = @category.articles.find(params[:article_id]) 
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
@@ -54,21 +58,15 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
+    @category = Category.find(params[:category_id]) 
+    @article = @category.articles.find(params[:id])
     @article.destroy
-    respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to category_path(@category)
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def article_params
-      params.require(:article).permit(:title, :text)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def article_params
+    params.require(:article).permit(:title, :text)
+  end
 end

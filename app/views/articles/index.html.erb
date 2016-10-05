@@ -1,27 +1,27 @@
-<p id="notice"><%= notice %></p>
+<link rel="stylesheet" href="/assets/articles.scss"/>
+<div id ="myarticle">
+  <table>
+    <thead>
+      <tr>
+        <p> 文章列表:</p>
+        <th colspan="19"></th>
+      </tr>
+    </thead>
 
-<h1>Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title:</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+    <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= article.title %></td>
-        <td><%= link_to '查看全文', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+      <td colspan="5"></td>
+      <td><p><%=article.title %></P>
+      <%= truncate (strip_tags article.text.html_safe), length:300 %>
+      <%=link_to "查看全文", [article.category, article], method: :get %>
+    </td>
+  </div>  
+    </tr>
+
+  <% end %>
+    </tbody>
+  </div>
 </table>
 
 <br>
-
-<%= link_to 'New Article', new_article_path %>

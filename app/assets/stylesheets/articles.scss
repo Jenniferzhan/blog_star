@@ -1,3 +1,37 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+  #Content{
+    height:600px;
+    margin-top:30px;/*此处讲解margin的用法，设置content与上面header元素之间的距离*/
+  }
+
+  #Content-Main{
+    height:400px;
+    width:720px;
+    margin:-100px;/*设置元素跟其他元素的距离为20像素*/
+    margin-left:250px;
+  }
+
+  #myarticle{
+    width:700px;
+    overflow-y:hidden;
+    margin:-90px 30px;
+    margin-left:260px;
+  }
+  p{
+    font-size:13px;
+    color:black;
+    text-indent: 2em;
+    margin-bottom: 10px;
+  }
+  td{
+    border:1px solid green;}
+  button{
+    width:700px;
+    margin-top:30px;
+    text-align: center;
+    display: none;
+  }
+

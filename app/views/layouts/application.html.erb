@@ -1,31 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html>
 <head>
-<title>MyBlog</title>
-<%= csrf_meta_tags %>
-<%= action_cable_meta_tag %>
-
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+<meta charset="gb2312">
+<title>星星的个人博客</title>
+<meta name="Keywords" content="博客" >
+<meta name="Description" content="博客" >
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
 </head>
 
 <body>
-<%= yield %>
-<div id="header">
-  <h1>star的blog</h1>
-  <p>努力努力再努力</p>
-  </div>
+<header>
+  <div class="quotes">
+    <p>我就是我，是颜色不一样的烟火<br> --------星星的博客</p>
+    <div class="quotes">
+    </div>
+    <!--nav begin-->
+    <div id="nav">
+      <!--nav begin-->
+      <div id="nav">
+        <ul>
+        <li><%= link_to '首页', articles_path %></a></li>
+        <li><%= link_to '关于我', static_pages_about_path %></li>
+        <li><%= link_to '慢生活',static_pages_home_path %></li>
+        <li><a href="#">留言板</a></li>
+      </ul>
+    </div>
+    <!--nav end--> 
 
-  <div id="nav">
-    <ul>
-    <li><a href="index.html">首页</a></li>
-    <li><%= link_to"关于我", static_pages_about_path %></li>
-    <li><a href="learn.html">学无止境</a></li>
-    <li><a href="guestbook.html">留言板</a></li>
-    <div class="clear"></div>
-  </ul>
-</div>
-</form> 
-</body>
-</html>
+  </header>
+
+  <div class="side">  
+      <div class="weather"><iframe width="250" scrolling="no" height="60" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=12&icon=1&num=1"></iframe></div>
+
+      <div id="about">      <h1></h1></div>
+      <img src="/assets/me.jpg" width="120" height="120" alt="博主"/>
+      <p>姓名：star</p>
+      <p>职业：</p>
+      <%= render "categories/category" %>
+
+    </div>
+
+    <%= yield %>
+    </body>
+
+    </html>
 
