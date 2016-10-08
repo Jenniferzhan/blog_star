@@ -1,0 +1,14 @@
+
+<p>
+<strong>文章题目:</strong>
+<%= article.title %>
+</p>
+
+<p> 
+<%= link_to '删除文章', [article.category, article], method: :delete,
+  data: { confirm: 'Are you sure?' } %>
+  <%= link_to '查看文章', [article.category, article], method: :get %>
+</p>
+ 
+
+

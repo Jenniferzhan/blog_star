@@ -14,7 +14,7 @@
       <td colspan="5"></td>
       <td><p><%=article.title %></P>
       <%= truncate (strip_tags article.text.html_safe), length:300 %>
-      <%=link_to "查看全文", [article.category, article], method: :get %>
+      <%=link_to "查看全文",  article_path(article), method: :get %>
     </td>
   </div>  
     </tr>

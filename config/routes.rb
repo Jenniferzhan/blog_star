@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
+  resources :posts
   get 'users/new'
   post 'users/create'
-
   mount Ckeditor::Engine => '/ckeditor'
-
-  resources :categories do
-    resources :articles do
-      resources :comments
-    end
+ # resources :posts,only: [:index,:show]
+  resources :categories, :only=>[:show] 
+  resources :articles, :only=>[:show,:index,:edit,:update] do
+    resources :comments, :only=>[:create]
   end
-
   get 'articles' =>'articles#index'
   get 'static_pages/home'
   get 'static_pages/about'
-
-  get 'sessions/new'
-  post 'sessions/create'
-  delete 'sessions/destroy'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :admin do 
+    resources :categories
+    resources :articles 
+    resources :comments,only: [:destroy,:index]
+    resources :posts
+    resources :sessions, :only=>[:new, :create, :destroy]  
+    resources :subscribes, only: [:index, :new, :create] 
+  end
 end

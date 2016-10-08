@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/assets/sessions.scss"/>
+
+<div class="blog_form">
+<% if flash[:alert] %>
+  <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+<%= form_for :session, url: :admin_sessions do |f| %>
+  <fieldset>
+    <legend>登陆</legend>
+  <div>
+    <%= label_tag :name, "用户名:" %>
+    <%= text_field_tag :name, params[:name] %>
+  </div>
+
+  <div>
+    <%= label_tag :password, "密码:" %>
+    <%= password_field_tag :password, params[:password] %>
+  </div>
+
+  <%= show_simple_captcha %>
+
+  <div id= "submit">
+    <%= submit_tag "提交" %>
+  </div>
+</fieldset>
+<% end %>
+</div>

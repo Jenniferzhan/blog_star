@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/assets/articles.scss"/>
+
+<p>
+<div id="Content-Main"> <%= @article.text.html_safe %></div>
+</p>
+<% if session[:user_id] %>
+  <%= link_to '修改文章', edit_admin_article_path, method: :get %>
+<% end %>
+</div>
+
+

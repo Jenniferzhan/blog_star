@@ -1,0 +1,28 @@
+<%= form_for@post, url: :admin_posts do |f| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :题目 %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :正文 %>
+    <%= javascript_include_tag "ckeditor/ckeditor.js" %>
+    <%= f.cktext_area :content %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -5,30 +5,17 @@
 
 <table>
   <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
+      <% Category.all.each do |category| %>
+        <tr>
+        <td><%= link_to category.name, articles_path(category_id: category["id"]) %></td>
+      </tr>
+    <% end %>
   </thead>
 
   <tbody>
-  <% Category.all.each do |category| %>
-      <tr>
-        <td><%= link_to category.name, category_articles_path(category), method: :get %></td>
-        <% if session[:user_id] %>
-        <td><%= link_to '查看分类', category %></td>
-        <td><%= link_to '编辑分类', edit_category_path(category) %></td>
-        <td><%= link_to '删除分类', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-      </tr>
-  <% end %>
-  </tbody>
+ </tbody>
 </table>
 
 <br>
- <% if session[:user_id] %>
-<%= link_to '新建分类', new_category_path %>
-
-  <%= button_to '退出登陆', sessions_destroy_path, :method => :delete %>
- <% end %>
  </div>
 

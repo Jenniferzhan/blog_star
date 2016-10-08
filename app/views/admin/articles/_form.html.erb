@@ -1,0 +1,17 @@
+<%= form_for @article, url: :admin_articles do |f| %>
+   <%= f.select(:category_id, options_for_select(Category.pluck(:name, :id)))%>
+  <div class="field">
+  <%= f.label :题目 %>
+  <%= f.text_field :title %>
+</div>
+
+<div class="field">
+  <%= f.label :正文 %>
+  <%= javascript_include_tag "ckeditor/ckeditor.js" %> 
+  <%= f.cktext_area :text, :style => "width:800px", rows: 8, :ckeditor => {:language => "zh-CN"} %>
+</div>
+
+<div class="actions">
+  <%= f.submit_tag"提交" %>
+</div>
+<% end %>

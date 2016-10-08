@@ -1,7 +1,19 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+nav { float: right; width: 100%; margin: -800px 0 30px 0; text-align: right }
 
+nav li { position: relative; display: inline-block; font-size: 18px; font-family: "Î¢ÈíÑÅºÚ", Arial, Helvetica, sans-serif; }
+
+nav li:hover { text-decoration: none }
+
+.topnav li { margin: 0 5px; padding: 0 8px; }
+
+.topnav li span:first-child { z-index: 2; display: block; }
+
+.topnav li span:last-child { z-index: 1; display: block; color: #999; font: 12px Georgia, serif; opacity: 0; -webkit-transition: -webkit-transform 0.3s, opacity 0.3s; -moz-transition: -moz-transform 0.3s, opacity 0.3s; transition: transform 0.3s, opacity 0.3s; -webkit-transform: translateY(-100%); -moz-transform: translateY(-100%); transform: translateY(-100%); text-align: center }
+
+.topnav li:hover span:last-child, .topnav a:focus span:last-child { opacity: 1; -webkit-transform: translateY(0%); -moz-transform: translateY(0%); transform: translateY(0%); }
   #Content{
     height:600px;
     margin-top:30px;/*此处讲解margin的用法，设置content与上面header元素之间的距离*/

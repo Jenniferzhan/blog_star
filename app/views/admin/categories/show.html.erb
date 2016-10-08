@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="/assets/categories.css"/>
+<div id= "show">
+  <p><strong>分类:</strong></p>
+<h2><%= @category.name %></h2>
+<h3>新增文章:</h3>
+<%= render "admin/articles/form" %>
+<%= link_to '返回', admin_categories_path %>
+</div>

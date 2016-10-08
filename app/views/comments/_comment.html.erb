@@ -1,0 +1,16 @@
+
+<% @article.comments.each do |comment|%>
+  <p>
+<%= comment.name %>
+</p>
+
+<p>
+<%= comment.body %>
+</p>
+
+<p>
+<%= comment.email %>
+</p>
+<% end %>
+
+

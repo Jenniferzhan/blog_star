@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161004085837) do
+ActiveRecord::Schema.define(version: 20161008024745) do
 
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20161004085837) do
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.text     "body",       limit: 65535
-    t.string   "eamil"
+    t.string   "email"
     t.integer  "article_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
@@ -59,6 +59,14 @@ ActiveRecord::Schema.define(version: 20161004085837) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
+    t.text     "content",     limit: 65535
+    t.string   "picture_url"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "simple_captcha_data", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "key",        limit: 40
     t.string   "value",      limit: 6
@@ -67,6 +75,13 @@ ActiveRecord::Schema.define(version: 20161004085837) do
   end
 
   add_index "simple_captcha_data", ["key"], name: "idx_key", using: :btree
+
+  create_table "subscribes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "email"
+    t.boolean  "enable"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
