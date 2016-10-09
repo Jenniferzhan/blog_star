@@ -3,19 +3,22 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .newblog { 
+  font-size:1.5em;
   width: 740px; 
   overflow: hidden; 
 margin: -100px 0 }
 
-h1.t_nav { border-bottom: #F1F1F1 1px solid; 
+h1.t_nav { 
+  border-bottom: #F1F1F1 1px solid; 
   margin-top:0px;
   margin-left:12px;
-  font-size: 12px; 
+  font-size: 1.5em; 
   font-weight: normal; 
   line-height: 40px; 
 height: 40px; }
 
 h1.t_nav span{
+  font-size:1.5em;
   margin-top:0px;
   float:right; 
 color:green;}
