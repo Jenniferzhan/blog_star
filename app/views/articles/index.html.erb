@@ -1,27 +1,13 @@
 <link rel="stylesheet" href="/assets/articles.scss"/>
-<div id ="myarticle">
-  <table>
-    <thead>
-      <tr>
-        <p> 文章列表:</p>
-        <th colspan="19"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-      <td colspan="5"></td>
-      <td><p><%=article.title %></P>
-      <%= truncate (strip_tags article.text.html_safe), length:300 %>
-      <%=link_to "查看全文",  article_path(article), method: :get %>
-    </td>
-  </div>  
-    </tr>
-
+<h1 class="t_nav"><span>路漫漫其修远兮，吾将上下而求索.</span></h1></div>
+<div class ="newblog">
+<h1> 文章列表:</h1>
+<% @articles.each do |article| %>
+  <h2><%=article.title %></h2>
+<li><p><%= truncate (strip_tags article.text.html_safe), length:200 %></p>
+<h3><div class="readmore"><%=link_to "查看全文",  article_path(article), method: :get %></div><h3>
+    <%= article.created_at.strftime('%Y-%m-%d %H:%M:%S').to_s  %>
+    <div class="line"></div></li>
   <% end %>
-    </tbody>
   </div>
-</table>
 
-<br>

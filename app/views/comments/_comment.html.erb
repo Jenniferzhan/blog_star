@@ -1,11 +1,11 @@
 
 <% @article.comments.each do |comment|%>
   <p>
-<%= comment.name %>
+  <h3>用户: <%= comment.name %></h3>
 </p>
 
 <p>
-<%= comment.body %>
+<h4>发表评论:<%= comment.body %></h4>
 </p>
 
 <p>

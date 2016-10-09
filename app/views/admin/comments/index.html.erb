@@ -1,3 +1,5 @@
+
+<link rel="stylesheet" href="/assets/applicatiion.css"/>
 <link rel="stylesheet" href="/assets/categories.css"/>
  
 <nav class="topnav" id="topnav">
@@ -7,8 +9,8 @@
   <li><span><%=link_to "生活",admin_posts_path %></span><span class="en">Life</span></li>
   </nav>
 
-<div id= category>
-  <h1>文章分类</h1></div>
+<div id= comment>
+  <h1>评论列表</h1></div>
 
 <table>
   <thead>
@@ -18,15 +20,16 @@
   </thead>
 
   <tbody>
-  <% @categories.each do |category| %>
+  <% @comments.each do |comment| %>
     <tr>
-    <td><%= category.name %></td>
-    <td><%= link_to '编辑分类', edit_admin_category_path(category) %></td>
-    <td><%= link_to '删除分类', admin_category_path(category), method: :delete, 
-      data: { confirm: 'Are you sure?' } %></td>
+    <td><%= comment.article.id%></td>
+    <td><%= comment.article.title%></td>
+    <td><%= comment.name %></td>
+    <td><%= comment.body %></td>
+    <td><%= comment.email %></td>
+    <td><%= link_to '删除', admin_comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
-<td><%= link_to '新建分类',  new_admin_category_path %></td>
 </tr>
 </tbody>
 </table>

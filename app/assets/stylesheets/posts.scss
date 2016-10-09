@@ -1,3 +1,57 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.newblog { 
+  width: 740px; 
+  overflow: hidden; 
+margin: -100px 0 }
+
+h1.t_nav { border-bottom: #F1F1F1 1px solid; 
+  margin-top:0px;
+  margin-left:12px;
+  font-size: 12px; 
+  font-weight: normal; 
+  line-height: 40px; 
+height: 40px; }
+
+h1.t_nav span{
+  margin-top:0px;
+  float:right; 
+color:green;}
+
+.newblog h1 { 
+  color: #333;
+margin-left:50px;}
+
+.newblog h2 { 
+  color: #333; 
+  font-size: 14px; 
+  margin: 20px 100px 10px 25px; 
+clear:both}
+
+.nlist { 
+  width: 900px; 
+  float: left; 
+  margin: 0 0 0 10px; 
+line-height: 1.9; }
+
+h3.readmore { 
+  background: #f90; 
+  color: #fff; 
+  padding: 5px 10px; 
+  float: right; 
+margin: 20px 0 0 0 }
+
+.line { 
+  overflow: hidden; 
+  width: 97%; 
+  height: 20px; 
+  border-bottom: 3px dashed #ccc;
+color:green; }
+
+.show{margin-left:300px;
+  margin-top:-100px;
+color:green;}
+
+.p{color:green;}

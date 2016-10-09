@@ -1,8 +1,12 @@
 class Admin::CommentsController < ApplicationController
 
   def index
-    @article = Article.find(params[:article_id])
-    @comments = Comments.all
+    if params[:article_id].present?
+    @comments = Comment.where(article_id: params[:article_id])
+    else
+      @comments = Comment.all
+  end
+  end
 
   def destroy
     @article = Article.find(params[:article_id])
@@ -13,6 +17,6 @@ class Admin::CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:commenter, :body)
+    params.require(:comment).permit(:name, :body, eamil)
   end 
 end

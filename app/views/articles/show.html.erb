@@ -1,17 +1,16 @@
 <link rel="stylesheet" href="/assets/articles.scss"/>
 
-<p>
 <div id="Content-Main"> 
+<p>
   <%= @article.text.html_safe %>
   </p>
   <% if @article.comments.present? %>
-  <h2>评论:</h2>
+  <h2>评论专区:</h2>
   <%= render "comments/comment" %>
 <% else %>
-    <h2>暂无评论</h2>
+  <h2>暂无评论</h2>
 <% end %>
   <h3>新增评论:</h3>
   <%= render "comments/form" %>
 </div>
-
 

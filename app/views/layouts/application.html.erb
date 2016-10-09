@@ -26,8 +26,7 @@
         <ul>
         <li><%= link_to '首页', articles_path %></a></li>
         <li><%= link_to '关于我', static_pages_about_path %></li>
-        <li><%= link_to '慢生活',static_pages_home_path %></li>
-        <li><a href="#">留言板</a></li>
+        <li><%= link_to '慢生活',posts_path %></li>
       </ul>
     </div>
     <!--nav end--> 
@@ -39,8 +38,7 @@
 
       <div id="about">      <h1></h1></div>
       <img src="/assets/me.jpg" width="120" height="120" alt="博主"/>
-      <p>姓名：star</p>
-      <p>职业：</p>
+      <p>姓名：詹星</p>
       <%= render "categories/category" %>
 
     </div>

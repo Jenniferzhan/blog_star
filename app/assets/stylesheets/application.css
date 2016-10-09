@@ -5,16 +5,24 @@ charset "gb2312";
 * { margin: 0; 
   * padding: 0 }
   * a:link, a:visited { text-decoration: none; }
+
   * ul, li { list-style-type: none }
+  
   * img { border: 0; }
+
   * body { font-size: 12px; background:center 0 scroll no-repeat; color: #5d5d5d; }
+
   * body { background-image: url("bg-girl.jpg"); height:1px; background-size:1050px 200px; }
+
   * .blank { height: 5px; overflow: hidden; width: 100%; margin: auto; clear: both }
 
   */* header */
   header { width: 100%; margin: auto; border-bottom: #3c7a48 1px }
+
   .quotes { width: 1000px; position: relative; margin: 18px auto 120px auto; }
+
   .quotes p { text-shadow: #246640 1px 1px 1px; color: #fff; width: 330px; line-height: 26px; }
+
   .text5 { position: absolute; left: 0px; top: 160px; font-family: "Î¢ÈíÑÅºÚ"; font-size: 30px; color: #FFF; -webkit-box-reflect: below -3px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white)); }/* belowÎÄ×Öµ¹Ó°·œÏòÏòÏÂ£¬ŸàÀë3px ÑÕÉ«œ¥±äÓÉÉÏÍùÏÂ */
   .flower img { margin: 22px 0 0 17px; display: block; }
 
@@ -62,73 +70,6 @@ charset "gb2312";
   padding: 20px 0 0 75px; }
 
 
-  .aboutcon{background:url(../images/aboutphoto.jpg) no-repeat bottom right; 
-  color:#696969}
-
-  h1.t_nav { border-bottom: #F1F1F1 1px solid; 
-    margin-top:-100px;
-    margin-left:12px;
-    font-size: 12px; 
-    font-weight: normal; 
-    line-height: 40px; 
-  height: 40px; }
-
-  h1.t_nav a{
-    width: 100px; 
-    display: block; 
-    text-align: center ; 
-    color: #fff; 
-    float:left}
-
-  h1.t_nav span{
-    margin-top:-100px;
-    float:right; 
-  color:#999}
-
-  .n1 { 
-  background: #5EA51B; }
-
-  .n2{ 
-  background: #8BBF5D; }
-
-  .about{ 
-    width:740px;
-    overflow: hidden; 
-    background: url(../images/r_line.jpg) repeat-y right; 
-  line-height:22px;
-  float:center;}
-
-  .about h2{ font-size:22px; 
-    font-family: 'Architects Daughter', cursive; 
-    margin-top:1px;
-    margin-left:19px;
-  margin-bottom:20px}
-
-  .about p{ 
-    margin-left:20px;
-  margin-bottom:20px}
-
-  .about_c,.about{
-  margin:20px 0}
-
-  .about ul{ 
-  width:710px}
-
-  .about_c{
-    margin-left:20px;
-    padding:10px 0 0 10px; 
-    color:#999; 
-  line-height:26px; }
-
-  .about_c img{ 
-  margin:5px 0}
-
-  .about_c span{ 
-  color:#19A566}
-
-  a.blog_link{ 
-    color:#1CA368; 
-  margin:0 20px}
 
   #section {
     width:350px;

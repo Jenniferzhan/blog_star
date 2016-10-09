@@ -1,3 +1,20 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+    form {
+      p {
+        margin-left: 120em;
+      }
+
+      select, textarea, input {
+        margin-left: 0.5em;
+      }
+
+      .submit {
+        margin-left: 150em;
+      }
+
+    
+  }
+

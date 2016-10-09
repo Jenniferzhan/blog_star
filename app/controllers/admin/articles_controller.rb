@@ -1,4 +1,5 @@
 class Admin::ArticlesController < ApplicationController
+  before_action :authericate_user!
 
   def index
     if params[:category_id].present?

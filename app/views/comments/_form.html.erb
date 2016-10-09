@@ -1,17 +1,16 @@
-<%= form_for([@article, @article.comments.build]) do |f| %>
-    <p>
-    <%= f.label :姓名 %><br>
-    <%= f.text_field :name%>
+  <%= form_for([@article, @article.comments.build]) do |f| %>
+      <p>
+      <%= f.text_area :body,:style => "width:500px", rows: 8,placeholder: "发表评论" %>
   </p>
-  <p>
-    <%= f.label :正文 %><br>
-    <%= f.text_area :body %>
+    <p>
+      <%= f.text_field :name, placeholder: "请输入用户名" %>
   </p>
   <p>
-  <%= f.label :email %><br>
-  <%= f.text_field :email %>
+  <%= f.text_field :email, placeholder: "请输入email",style: "margin-left: 12px" %>
   </p>
-  <p>
-    <%= f.submit_tag"新增评论" %>
+    <p>
+      <%= f.submit_tag"新增评论" %>
   </p>
 <% end %>
+<p><%= link_to '返回', articles_path %></p>
+</div>

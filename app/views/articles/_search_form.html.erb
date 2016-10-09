@@ -1,0 +1,12 @@
+<form action="/articles/index" id="articles_search">
+    <input type="text" name="search" value="<%= params[:search] %>" id="exampleInputAmount" placeholder="article_title">
+    <button type="submit">Search</button> 
+  </form>
+
+  <script>
+$("#_rticles_search input").keyup(function() {
+        $.get($("#articles_search").attr("action"), $("#articles_search").serialize(), null, "script");
+            return false;                  
+                }); 
+  </script>
+

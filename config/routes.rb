@@ -13,10 +13,9 @@ Rails.application.routes.draw do
   get 'static_pages/about'
   namespace :admin do 
     resources :categories
-    resources :articles 
+    resources :articles  
     resources :comments,only: [:destroy,:index]
     resources :posts
     resources :sessions, :only=>[:new, :create, :destroy]  
-    resources :subscribes, only: [:index, :new, :create] 
   end
 end
