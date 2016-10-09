@@ -10,7 +10,7 @@
 
   * body { font-size: 12px; background:center 0 scroll no-repeat; color: #5d5d5d; }
 
-  * body { background-image: url("bg-girl.jpg"); height:1px; background-size:2000px 280px; }
+  * body { background-image: url("bg-girl.jpg"); height:1px; background-size:2000px 270px; }
 
   * .blank { height: 5px; overflow: hidden; width: 100%; margin: auto; clear: both }
 
@@ -48,19 +48,22 @@ font-size:1.5em;}
 
   .side {
     overflow:hidden;
-    margin-top:-9.5em;
+    margin-top:-5em;
     margin-bottom:0px;
     background:rgba(56,134,72,.8);
     border-width:3px;
     float: left;
     padding: 1em 2em;
     padding-bottom: auto;
-    width: 20em;
+    width: 15em;
     height: 70em;
+    font-size:1.5em;
   }
   #about 
     h1 {margin-top:0em;color:black}
-    p {margin-top:0em; color:black}
+    p {margin-top:0em; 
+    color:black}
+    
 
   .weather { 
     height: 88px; 
