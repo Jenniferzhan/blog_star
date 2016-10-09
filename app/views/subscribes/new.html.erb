@@ -1,9 +1,0 @@
-<div class="row">
-  <div class="small-12 medium-12 large-9 columns">
-    <h2>订阅
-    </h2>
-    <% _slim_controls1 = simple_form_for @subscribe do |f| 
-    %><%= ::Temple::Utils.escape_html((f.input :email)) %>
-  <%= ::Temple::Utils.escape_html((f.button :submit, value: '订阅', data: { 'disable-with'=> '订阅中...' })) %>
-  <% end %><%= ::Temple::Utils.escape_html((_slim_controls1)) %></div></div>
-

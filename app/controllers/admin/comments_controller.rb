@@ -1,4 +1,5 @@
 class Admin::CommentsController < ApplicationController
+  before_action :authorize
 
   def index
     if params[:article_id].present?

@@ -1,5 +1,7 @@
 class Admin::SessionsController < ApplicationController
   protect_from_forgery :except => :index
+
+
   def new
   end
 
@@ -16,6 +18,7 @@ class Admin::SessionsController < ApplicationController
 
   def destroy                  
     session[:user_id] = nil    
+    puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"
     redirect_to new_admin_session_path, notice: "Logged out" 
   end
 

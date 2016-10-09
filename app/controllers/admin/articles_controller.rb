@@ -1,16 +1,10 @@
 class Admin::ArticlesController < ApplicationController
-  before_action :authericate_user!
+  before_action :authorize
+  protect_from_forgery :except => :index
 
   def index
-    if params[:category_id].present?
-      @category = Category.find(params[:category_id])
-    end
-    if params[:category_id].present?
-      @articles = Article.where(category_id: params[:category_id])
-    else
       @articles = Article.all
     end
-  end
 
   def new
     @article = Article.new
@@ -37,11 +31,10 @@ class Admin::ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
-    @category = Category.find(params[:category_id]) 
-    @article = @category.articles.find(params[:id]) 
+    @article = Article.find(params[:id]) 
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to category_article_path(@category, @article),  notice: 'Article was successfully updated.' }
+        format.html { redirect_to admin_articles_path,  notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
@@ -53,10 +46,9 @@ class Admin::ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    @category = Category.find(params[:category_id]) 
-    @article = @category.articles.find(params[:id])
+    @article = Article.find(params[:id])
     @article.destroy
-    redirect_to admin_category_articles_path(@category)
+    redirect_to admin_articles_path
   end
 
   private

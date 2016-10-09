@@ -1,0 +1,10 @@
+ 
+<% @articles.each do |article| %>
+  <h2><%=article.title %></h2>
+<li><p><%= truncate (strip_tags article.text.html_safe), length:200 %></p>
+<h3><div class="readmore"><%=link_to "查看全文",  article_path(article), method: :get %></div><h3>
+    <%= article.created_at.strftime('%Y-%m-%d %H:%M:%S').to_s  %>
+    <div class="line"></div></li>
+  <% end %>
+
+

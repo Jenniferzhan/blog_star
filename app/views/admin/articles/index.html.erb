@@ -32,7 +32,7 @@
 
 <br>
  <%= link_to '新建文章', new_admin_article_path %>
- <%= link_to '退出登陆', admin_session_url(session[:user_id]), method: :delete %></p>
+ <%= button_to '退出登陆', admin_session_path(session[:user_id]), method: :delete %></p>
 
 
 

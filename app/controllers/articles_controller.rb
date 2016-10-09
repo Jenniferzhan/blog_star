@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
+    @article = Article.new
     if params[:search].present? 
       @articles = Article.search(params[:search]) 
     else

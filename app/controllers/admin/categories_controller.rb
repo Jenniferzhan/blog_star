@@ -1,6 +1,6 @@
 class Admin::CategoriesController < ApplicationController
-  before_action :authericate_user!
-
+  
+  before_action :authorize
   # GET /categories
   # GET /categories.json
   def index
