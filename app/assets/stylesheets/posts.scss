@@ -19,16 +19,9 @@ height: 40px; }
 
 h1.t_nav span{
   font-size:0.8em;
-  margin-top:0px;
-  margin-left:100px;
+  margin-top:-100px;
   float:right; 
 color:green;}
-
-.newblog { 
-  font-size:1.2em;
-  width: 1005px; 
-  overflow: hidden; 
-margin: -200px 0 }
 
 .newblog h1 { 
   color: #333;
@@ -39,6 +32,12 @@ margin-left:50px;}
   font-size: 14px; 
   margin: 20px 100px 10px 25px; 
 clear:both}
+
+.nlist { 
+  width: 900px; 
+  float: left; 
+  margin: 0 0 0 10px; 
+line-height: 1.9; }
 
 h3.readmore { 
   background: #f90; 
