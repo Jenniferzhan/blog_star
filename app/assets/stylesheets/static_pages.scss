@@ -1,6 +1,6 @@
 
-  .aboutcon{background:url(../images/aboutphoto.jpg) no-repeat bottom right; 
-  color:#696969}
+  .aboutcon{ 
+  color:#696969;}
 
   h1.t_nav { border-bottom: #F1F1F1 1px solid; 
     margin-top:-100px;
@@ -18,9 +18,10 @@
     float:left}
 
   h1.t_nav span{
+    font-size:1.1em;
     margin-top:-100px;
     float:right; 
-  color:#999}
+  color:green;}
 
   .n1 { 
   background: #5EA51B; }
@@ -35,7 +36,7 @@
   line-height:22px;
   float:center;}
 
-  .about h2{ font-size:22px; 
+  .about h2{ font-size:27px; 
     font-family: 'Architects Daughter', cursive; 
     margin-top:1px;
     margin-left:100px;
@@ -54,8 +55,10 @@
     color:#999; 
   line-height:26px; }
 
-  .about_c p{ 
+  .about_c p{
+    font-size:18px;
     margin-left:300px;}
+
 
   a.blog_link{ 
     color:#1CA368; 
