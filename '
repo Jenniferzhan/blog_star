@@ -40,6 +40,12 @@ margin-left:50px;}
   margin: 20px 100px 10px 25px; 
 clear:both}
 
+.nlist { 
+  width: 900px; 
+  float: left; 
+  margin: 0 0 0 10px; 
+line-height: 1.9; }
+
 h3.readmore { 
   background: #f90; 
   color: #fff; 

@@ -47,6 +47,7 @@ font-size:1.5em;}
   
 
   .side {
+    line-height:1.5px;
     overflow:hidden;
     margin-top:-5em;
     margin-bottom:0px;
