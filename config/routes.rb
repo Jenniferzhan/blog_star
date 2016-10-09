@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :posts
   get 'users/new'
   post 'users/create'
+  root 'articles#index'
   mount Ckeditor::Engine => '/ckeditor'
  # resources :posts,only: [:index,:show]
   resources :categories, :only=>[:show] 
